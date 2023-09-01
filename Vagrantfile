@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
           node.vm.hostname = "ansible"
           node.vm.network "private_network", ip: "192.168.45.10"
           config.vm.provider :virtualbox do |vb|
-               vb.customize ["modifyvm", :id, "--memory", "2048"]
+               vb.customize ["modifyvm", :id, "--memory", "3048"]
                vb.customize ["modifyvm", :id, "--cpus", "2"]
           end
           config.vm.provision "file", source: "ssh/ansible_ssh_key", destination: "/home/vagrant/.ssh/id_rsa"
